@@ -1,0 +1,16 @@
+#!/usr/bin/env python3
+from calendar import calendar, month
+from datetime import date
+from sys import argv
+
+args = argv
+today = date.today()
+try:
+    firstArg = args[1]
+    if str(firstArg).lower().startswith("y"):
+        year = today.year
+    else:
+        year = int(args[1])
+    print(calendar(year))
+except:
+    print(month(today.year, today.month))
